@@ -25,8 +25,9 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/article/{id}', function ($id) {
+// https://laravel.com/docs/9.x/routing#route-model-binding
+Route::get('/article/{article}', function (Article $article) {
     return view('article', [
-        'article' => Article::find($id)
+        'article' => $article
     ]);
 });
