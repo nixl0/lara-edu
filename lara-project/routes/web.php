@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Article;
@@ -19,15 +20,7 @@ use App\Models\Article;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('main', [
-        'articles' => Article::all()
-    ]);
-});
+Route::get('/', [ArticleController::class, 'index']);
 
 // https://laravel.com/docs/9.x/routing#route-model-binding
-Route::get('/article/{article}', function (Article $article) {
-    return view('article', [
-        'article' => $article
-    ]);
-});
+Route::get('/article/{article}', [ArticleController::class, 'show']);
