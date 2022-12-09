@@ -20,7 +20,12 @@ use App\Models\Article;
 //     return view('welcome');
 // });
 
+// Main page, lists all articles
 Route::get('/', [ArticleController::class, 'index']);
 
-// https://laravel.com/docs/9.x/routing#route-model-binding
-Route::get('/article/{article}', [ArticleController::class, 'show']);
+// Create article
+Route::get('/articles/create', [ArticleController::class, 'create']);
+
+Route::post('/articles', [ArticleController::class, 'store']);
+// One article
+Route::get('/articles/{article}', [ArticleController::class, 'show']);

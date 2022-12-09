@@ -19,4 +19,21 @@ class ArticleController extends Controller
             'article' => $article
         ]);
     }
+
+    public function create() {
+        return view('articles.create');
+    }
+
+    public function store() {
+        $validated = request()->validate([
+            'title' => 'required|unique:articles,title|max:255',
+            'slug' => 'required|max:255',
+            'tags' => 'required',
+            'content' => 'required'
+        ]);
+
+        Article::create($validated);
+
+        return redirect('/');
+    }
 }
