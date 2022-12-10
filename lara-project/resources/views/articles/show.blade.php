@@ -31,24 +31,30 @@
         <p class="pb-5">
             {{ $article->content }}
         </p>
-        {{-- buttons --}}
-        <div class="mt-5 flex">
-            <a href="/articles/{{ $article->id }}/edit">
-                <button class="text-slate-500 border border-2 border-slate-300 hover:bg-slate-100 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 mr-3 transition duration-200">
-                    <i class="fa-solid fa-pencil"></i>
-                    Edit
-                </button>
-            </a>
-            <a href="/articles/{{ $article->id }}/delete">
-                <form method="POST" action="/articles/{{ $article->id }}" >
-                    <button class="text-red-500 border border-2 border-red-300 hover:bg-red-100 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 mr-3 transition duration-200">
-                        @csrf
-                        @method('DELETE')
-                        <i class="fa-solid fa-trash"></i>
-                        Delete
+
+        @auth
+            {{-- show buttons if authenticated --}}
+
+            <div class="mt-5 flex">
+                <a href="/articles/{{ $article->id }}/edit">
+                    <button
+                        class="text-slate-500 border border-2 border-slate-300 hover:bg-slate-100 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 mr-3 transition duration-200">
+                        <i class="fa-solid fa-pencil"></i>
+                        Edit
                     </button>
-                </form>
-            </a>
-        </div>
+                </a>
+                <a href="/articles/{{ $article->id }}/delete">
+                    <form method="POST" action="/articles/{{ $article->id }}">
+                        <button
+                            class="text-red-500 border border-2 border-red-300 hover:bg-red-100 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 mr-3 transition duration-200">
+                            @csrf
+                            @method('DELETE')
+                            <i class="fa-solid fa-trash"></i>
+                            Delete
+                        </button>
+                    </form>
+                </a>
+            </div>
+        @endauth
     </div>
 @endsection

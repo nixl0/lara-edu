@@ -65,7 +65,7 @@
                 Image
             </label>
             <div class="mt-2">
-                <input name="image" type="file" required
+                <input name="image" type="file"
                     class="w-full">
                 
                 <div class="flex justify-center py-5">
@@ -99,7 +99,7 @@
         </div>
 
         <button type="submit"
-            class="text-white bg-slate-500 hover:bg-slate-600 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 transition duration-200">Edit</button>
+            class="text-white bg-slate-500 hover:bg-slate-600 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 mr-2 transition duration-200">Edit</button>
 
     </form>
 @endsection
