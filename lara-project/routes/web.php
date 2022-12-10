@@ -26,6 +26,17 @@ Route::get('/', [ArticleController::class, 'index']);
 // Create article
 Route::get('/articles/create', [ArticleController::class, 'create']);
 
+// Store article
 Route::post('/articles', [ArticleController::class, 'store']);
+
+// Edit article
+Route::get('/articles/{article}/edit', [ArticleController::class, 'edit']);
+
+// Update article
+Route::put('/articles/{article}', [ArticleController::class, 'update']);
+
+// Delete article
+Route::delete('/articles/{article}', [ArticleController::class, 'destroy']);
+
 // One article
 Route::get('/articles/{article}', [ArticleController::class, 'show']);

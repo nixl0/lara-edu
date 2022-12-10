@@ -20,7 +20,8 @@ class ArticleFactory extends Factory
             'title' => fake()->sentence(),
             'slug' => fake()->words(6, true),
             'tags' => implode(', ', fake()->words(6)),
-            'content' => fake()->text(2000)
+            'content' => fake()->text(2000),
+            'image' => fake()->imageUrl(640, 480)
         ];
     }
 }

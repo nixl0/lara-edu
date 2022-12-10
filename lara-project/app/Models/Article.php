@@ -9,7 +9,7 @@ class Article extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'slug', 'tags', 'content'];
+    protected $fillable = ['title', 'slug', 'tags', 'content', 'image'];
 
     public function scopeFilter($query, array $filters) {
         if ($filters['tag'] ?? false) {
