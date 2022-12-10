@@ -10,7 +10,7 @@ class ArticleController extends Controller
     public function index() {
         // dd(request('tag'));
         return view('articles.index', [
-            'articles' => Article::latest()->filter(request(['tag', 'search']))->get()
+            'articles' => Article::latest()->filter(request(['tag', 'search']))->paginate(15)
         ]);
     }
 

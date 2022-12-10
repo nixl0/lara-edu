@@ -68,7 +68,7 @@
         </div>
 
         <button type="submit"
-            class="text-white bg-slate-500 hover:bg-slate-600 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2">Create</button>
+            class="text-white bg-slate-500 hover:bg-slate-600 focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 transition duration-200">Create</button>
 
     </form>
 @endsection
